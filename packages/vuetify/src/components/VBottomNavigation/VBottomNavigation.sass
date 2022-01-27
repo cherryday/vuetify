@@ -6,7 +6,7 @@
   display: flex
   max-width: 100%
   overflow: hidden
-  position: fixed
+  position: absolute
   transition: $bottom-navigation-transition
 
   @include tools.border($bottom-navigation-border...)
@@ -15,9 +15,6 @@
 
   &--is-active
     @include tools.elevation($bottom-navigation-elevation)
-
-  &--absolute
-    position: absolute
 
 .v-bottom-navigation__content
   display: flex

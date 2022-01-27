@@ -64,7 +64,7 @@ export const VBottomNavigation = defineComponent({
       (props.density === 'compact' ? 16 : 0)
     ))
     const isActive = useProxiedModel(props, 'modelValue', props.modelValue)
-    const layoutStyles = useLayoutItem(
+    const { layoutItemStyles } = useLayoutItem(
       props.name,
       computed(() => parseInt(props.priority, 10)),
       computed(() => 'bottom'),
@@ -83,7 +83,6 @@ export const VBottomNavigation = defineComponent({
               'v-bottom-navigation--horizontal': props.mode === 'horizontal',
               'v-bottom-navigation--is-active': isActive.value,
               'v-bottom-navigation--shift': props.mode === 'shift',
-              'v-bottom-navigation--absolute': props.absolute,
             },
             themeClasses.value,
             backgroundColorClasses.value,
@@ -95,7 +94,7 @@ export const VBottomNavigation = defineComponent({
           ]}
           style={[
             backgroundColorStyles.value,
-            layoutStyles.value,
+            layoutItemStyles.value,
             textColorStyles.value,
             {
               height: convertToUnit(height.value),
